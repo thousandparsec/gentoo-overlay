@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+
+<pkgmetadata>
+<herd>games</herd>
+<maintainer>
+  <name>Aaron Mavrinac</name>
+  <email>mavrinac@gmail.com</email>
+</maintainer>
+<longdescription>A Python library to support quick development of clients for
+Thousand Parsec games.</longdescription>
+</pkgmetadata>

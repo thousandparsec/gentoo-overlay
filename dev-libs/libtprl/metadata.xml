@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+
+<pkgmetadata>
+<herd>cpp</herd>
+<maintainer>
+  <name>Aaron Mavrinac</name>
+  <email>mavrinac@gmail.com</email>
+</maintainer>
+<longdescription>C++ library for GNU Readline. Originaly written for Thousand
+Parsec project.</longdescription>
+</pkgmetadata>

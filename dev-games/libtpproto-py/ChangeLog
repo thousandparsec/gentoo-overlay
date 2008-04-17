@@ -1,0 +1,13 @@
+# ChangeLog for dev-games/libtpproto-py
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libtpproto-py-0.2.4 (25 Mar 2008)
+
+  25 Mar 2008; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-py-0.2.4.ebuild:
+  version bump
+
+*libtpproto-py-0.2.3 (24 Mar 2008)
+
+  24 Mar 2008; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-py-0.2.3.ebuild:
+  Initial import

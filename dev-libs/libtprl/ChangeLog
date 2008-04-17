@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/libtprl
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*libtprl-0.1.2 (24 Mar 2008)
+
+  24 Mar 2008; Aaron Mavrinac <mavrinac@gmail.com> libtprl-0.1.2.ebuild: Initial
+  import

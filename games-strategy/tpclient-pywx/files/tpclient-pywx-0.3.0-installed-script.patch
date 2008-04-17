@@ -1,0 +1,28 @@
+--- doc/tp-pywx-installed
++++ doc/tp-pywx-installed
+@@ -7,6 +7,8 @@
+ echo /usr/local/lib							>> $TMP 2> /dev/null
+ echo /usr/lib 								>> $TMP
+ echo /lib									>> $TMP
++echo /usr/games/lib							>> $TMP
++echo /usr/games/lib64							>> $TMP
+ 
+ while read LIB_DIR; do
+ 	if [ -e "$LIB_DIR" ]; then
+@@ -19,13 +21,13 @@
+ 
+ 		if [ -e "$TPDIR" ]; then
+ 			echo "Found the client in $TPDIR"
+-			export TPCLIENT_GRAPHICS=`dirname $LIB_DIR`/share/tpclient-pywx
+-			export TPCLIENT_DOC=`dirname $LIB_DIR`/share/doc/tpclient-pywx
++			export TPCLIENT_GRAPHICS=/usr/share/games/tpclient-pywx/graphics
++			export TPCLIENT_DOC=/usr/share/games/tpclient-pywx/doc
+ 			#echo "Graphics  are in $TPCLIENT_GRAPHICS"
+ 			#echo "Documents are in $TPCLIENT_DOC"
+ 
+ 			cd $TPDIR
+-			./tpclient-pywx $ARGS
++			exec python ./tpclient-pywx $ARGS
+ 		fi
+ 	fi
+ done < $TMP
