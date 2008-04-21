@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  21 Apr 2008; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.4.1.ebuild:
+  Added ~sparc
+
 *tpserver-cpp-0.4.1 (24 Mar 2008)
 
   24 Mar 2008; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.4.1.ebuild: 
