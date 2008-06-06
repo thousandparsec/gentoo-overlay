@@ -33,7 +33,7 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
 
-	dodir /etc/tpserver-cpp
-	insinto /etc/tpserver-cpp
+	dodir /etc/${PN}
+	insinto /etc/${PN}
 	doins sample.conf "${FILESDIR}"/tpserver.conf
 }
