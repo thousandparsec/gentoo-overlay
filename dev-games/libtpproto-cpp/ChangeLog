@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  30 Jun 2008; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-cpp-0.1.0.ebuild:
+  Added Boost dependency and gnutls USE flag
+
 *libtpproto-cpp-0.1.0 (20 Jan 2007)
 
   20 Jan 2007; Jure Repinc <jlp@holodeck1.com> libtpproto-cpp-0.1.0.ebuild:

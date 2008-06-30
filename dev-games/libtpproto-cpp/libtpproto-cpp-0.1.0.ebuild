@@ -9,12 +9,16 @@ SRC_URI="mirror://sourceforge/thousandparsec/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc"
-DEPEND="doc? ( app-doc/doxygen )"
+IUSE="doc gnutls"
+DEPEND="dev-libs/boost
+        doc? ( app-doc/doxygen )
+        gnutls? ( >=net-libs/gnutls-1.2.10 )"
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	econf || die "econf failed"
+	econf \
+		$(use_enable gnutls) \
+		|| die "econf failed"
 	emake || die "emake failed"
 
 	if use doc; then
