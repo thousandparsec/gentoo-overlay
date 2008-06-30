@@ -6,7 +6,8 @@ inherit eutils games
 
 DESCRIPTION="A C++ server for Thousand Parsec games"
 HOMEPAGE="http://www.thousandparsec.net/tp/"
-SRC_URI="${P}.tar.gz"
+SRC_URI="mirror://sourceforge/thousandparsec/${P}.tar.gz
+         http://www.thousandparsec.net/tp/downloads/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~sparc"
