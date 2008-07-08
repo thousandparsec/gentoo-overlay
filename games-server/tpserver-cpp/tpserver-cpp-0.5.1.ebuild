@@ -21,10 +21,6 @@ DEPEND="dev-libs/boost
 
 RDEPEND="${DEPEND}"
 
-pkg_setup() {
-	enewuser ${PN} -1 -1 -1 games
-}
-
 src_compile() {
 	egamesconf \
 		$(use_enable avahi) \
@@ -38,18 +34,10 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
 
-	newinitd "${FILESDIR}"/${PN}.initd ${PN}
-	newconfd "${FILESDIR}"/${PN}.confd ${PN}
-	keepdir /var/{cache,run}/${PN}
-
 	dodir /etc/${PN}
 	insinto /etc/${PN}
 	insopts -m 0640 -o root -g games
 	doins sample.conf "${FILESDIR}"/tpserver.conf
 
 	prepgamesdirs
-}
-
-pkg_postinst() {
-	chown ${PN}:games /var/{cache,run}/${PN}
 }
