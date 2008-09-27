@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/thousandparsec/${P}.tar.gz
 		http://www.thousandparsec.net/tp/downloads/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~sparc"
+KEYWORDS="amd64 x86 sparc"
 IUSE=""
 DEPEND=">=sys-libs/readline-5.2_p1"
 RDEPEND="${DEPEND}"

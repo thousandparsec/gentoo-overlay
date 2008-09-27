@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  27 Sep 2008; Aaron Mavrinac <mavrinac@gmail.com> libtprl-0.1.2.ebuild:
+  Stabilized
+
   21 Apr 2008; Aaron Mavrinac <mavrinac@gmail.com> libtprl-0.1.2.ebuild:
   Added ~sparc
 
