@@ -8,7 +8,7 @@ EGIT_BOOTSTRAP="./autogen.sh"
 
 inherit git eutils games
 
-DESCRIPTION=""
+DESCRIPTION="A command-line administration utility for Thousand Parsec servers."
 HOMEPAGE="http://www.thousandparsec.net/tp/"
 SRC_URI=""
 
