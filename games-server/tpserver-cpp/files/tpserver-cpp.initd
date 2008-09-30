@@ -1,0 +1,50 @@
+#!/sbin/runscript
+# Copyright 1999-2006 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+# Default location if not specified in /etc/conf.d/tpserver-cpp
+PIDFILE=${PIDFILE:-/var/run/tpserver-cpp/tpserver-cpp.pid}
+
+depend() {
+	need net
+}
+
+checkconfig() {
+	local conf="/etc/tpserver-cpp/tpserver.conf"
+
+	if [ -e "${conf}" ] ; then
+		if [ -n "$(find /etc/tpserver-cpp -maxdepth 1 -name tpserver.conf -perm +0004)" ] ; then
+			eerror "${conf} must not be world-readable. Run e.g.:"
+			eerror "   chmod 640 ${conf}"
+			eerror "   chown root:games ${conf}"
+			return 1
+		fi
+	else
+		eerror "/etc/tpserver-cpp/tpserver.conf is needed to run tpserver-cpp"
+		eerror "There is a sample file in /etc/tpserver-cpp/"
+		return 1
+	fi
+}
+
+start() {
+	checkconfig || return 1
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon \
+		--start \
+		--chuid tpserver-cpp \
+		--exec /usr/games/bin/tpserver-cpp \
+		--name tpserver-cpp \
+		--pidfile "${PIDFILE}" \
+		-- -pid="${PIDFILE}"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon \
+		--stop \
+		--signal TERM \
+		--pidfile "${PIDFILE}"
+	eend $?
+}
