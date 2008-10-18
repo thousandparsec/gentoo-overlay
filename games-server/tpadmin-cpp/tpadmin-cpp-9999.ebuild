@@ -23,13 +23,13 @@ DEPEND=">=dev-libs/libtprl-0.1.2
 RDEPEND="${DEPEND}"
 
 src_compile() {
-	egamesconf ${myconf} || die "egamesconf failed"
+	egamesconf || die "egamesconf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
+	dodoc AUTHORS ChangeLog NEWS README
 
 	prepgamesdirs
 }

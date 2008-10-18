@@ -31,7 +31,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
+	dodoc AUTHORS ChangeLog NEWS README
 
 	dodir /etc/${PN}
 	insinto /etc/${PN}
