@@ -8,8 +8,8 @@ inherit distutils eutils
 
 DESCRIPTION="A Python library for development of Thousand Parsec game clients"
 HOMEPAGE="http://www.thousandparsec.net/tp/"
-SRC_URI="mirror://sourceforge/thousandparsec/${P}.tar.bz2
-		http://www.thousandparsec.net/tp/downloads/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/thousandparsec/${P}.1.tar.bz2
+		http://www.thousandparsec.net/tp/downloads/${PN}/${P}.1.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 x86"
