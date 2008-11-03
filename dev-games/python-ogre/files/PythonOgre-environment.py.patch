@@ -1,0 +1,35 @@
+--- environment.py.orig	2008-04-24 03:44:54.000000000 +0200
++++ environment.py	2008-04-24 08:59:41.000000000 +0200
+@@ -1526,16 +1526,6 @@
+                           
+ for name, cls in projects.items():
+ 
+-    # little hack to allow overriding of settings from the PythonOgreConfig_xxxxx.py file
+-    if hasattr(Config, name):   # look to see if the class exists in the config file
+-        print "Using Override for class ", name
+-        _class = Config.__dict__[name]  # get the class
+-        for key, value in _class.__dict__.items():
+-            if not key.startswith('_'):
+-                cls.__dict__[key] = value   
+-                print "Set %s.%s to %s" % (name, key, value) 
+-    
+-                    
+     ##CheckPaths( cls, name )
+     cls.root_dir = os.path.join( root_dir, 'code_generators', name )
+     cls.dir_name = name + '_' + str(cls.version)
+@@ -1565,5 +1555,14 @@
+         elif os.name == 'posix':
+             cls.PydName = cls.PydName + '.so'
+         elif os.name =='mac':
+-            print "WARNING - check the last line of environment.py!!"
++            print "WARNING - check the but last paragraph of environment.py!!"
++
++    # little hack to allow overriding of settings from the PythonOgreConfig_xxxxx.py file
++    if hasattr(Config, name):   # look to see if the class exists in the config file
++        print "Using Override for class ", name
++        _class = Config.__dict__[name]  # get the class
++        for key, value in _class.__dict__.items():
++            if not key.startswith('_'):
++                cls.__dict__[key] = value   
++                print "Set %s.%s to %s" % (name, key, value) 
+ 

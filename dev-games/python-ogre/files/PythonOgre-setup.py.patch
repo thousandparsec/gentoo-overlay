@@ -1,0 +1,54 @@
+--- setup.py.orig	2008-04-24 09:27:29.000000000 +0200
++++ setup.py	2008-04-24 09:28:16.000000000 +0200
+@@ -56,24 +56,27 @@
+ base = os.path.join(os.getcwd(), os.path.dirname(sys.argv[0]) )
+ demofiles = GetFileList ( os.path.join (base, "demos") )
+ 
++def GetPackageList ( basepath, trim=True ):
++    '''Construct a list of packages based on the dirs below basepath.
++    If trim is set, only list those leaf directories that have
++    compiled c-extensions ready.
++    '''
++    packages = []
++    for root, dirs, files in os.walk(basepath):
++        if trim and not dirs: # leaf dir
++            nonpyfiles = [fname for fname in files if not fname.endswith('py')]
++            if not nonpyfiles:
++                continue # skip directory with only *.py
++        packages.append('.'.join(root.split(os.path.sep)[1:]))
++    assert 'ogre' in packages, "there's something wrong with the package list."
++    return packages
++
++packagebase = 'packages_' + PythonVersionString
++
+ PACKAGEDATA = {
+-       "packages":    ['ogre', 
+-                        'ogre.io', 'ogre.io.OIS', 
+-                        'ogre.renderer', 'ogre.renderer.OGRE', 
+-                        'ogre.gui', 'ogre.gui.CEGUI','ogre.gui.QuickGUI', 'ogre.gui.betagui',
+-                        'ogre.sound', 'ogre.sound.OgreAL', 
+-                        'ogre.physics', 'ogre.physics.ODE', 'ogre.physics.OgreRefApp',
+-                        'ogre.physics.OgreOde', 'ogre.physics.OgreNewt', 'ogre.physics.Opcode',
+-                        'ogre.physics.bullet','ogre.physics.PhysX','ogre.physics.NxOgre','ogre.physics.NxOgre_09',
+-                        'ogre.physics.OgreBulletC', 'ogre.physics.OgreBulletD',
+-                        'ogre.addons','ogre.addons.theora',
+-                        'ogre.addons.ogrevideoffmpeg', 'ogre.addons.ogredshow',
+-                        'ogre.addons.plib','ogre.gui.navi',
+-                        'ogre.addons.ogreforests', 'ogre.addons.et', 'ogre.addons.caelum',
+-                        'ogre.addons.noise', 'ogre.addons.watermesh', 'ogre.addons.ofusion',
+-                        'ogre.addons.particleuniverse', 'ogre.addons.cadunetree'  ],
+-       "package_dir": {'': 'packages_'+ PythonVersionString },
+-       "package_data": {'': ['*.pyd', '*.dll', '*.so']}
++       "packages":    GetPackageList(os.path.join(packagebase, 'ogre')),
++       "package_dir": {'': packagebase },
++       "package_data": {'': ['*.pyd', '*.dll', '*.so', 'exposed_decl.pypp.txt']}
+ 
+ }
+ 
+@@ -81,4 +84,4 @@
+ setup(**PACKAGEDATA)
+  
+ 
+- 
+\ Kein Zeilenumbruch am Dateiende.
++ 

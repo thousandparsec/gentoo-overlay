@@ -1,0 +1,8 @@
+# ChangeLog for games-strategy/tpclient-pyogre
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*tpclient-pyogre-0.0.1 (02 Nov 2008)
+
+  02 Nov 2008; Aaron Mavrinac <mavrinac@gmail.com> tpclient-pyogre-0.0.1.ebuild:
+  Initial import

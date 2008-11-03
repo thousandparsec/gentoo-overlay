@@ -1,0 +1,22 @@
+--- SConstruct.orig	2008-04-24 08:13:36.000000000 +0200
++++ SConstruct	2008-04-24 08:36:15.000000000 +0200
+@@ -131,8 +131,10 @@
+ opts = Options('custom.py')
+ opts.Add(ListOption('PROJECTS', 'Project to build wrappers for',
+                     default_projects, possible_projects ))
++opts.Add(BoolOption('install_pypp_txt', 'Set yes to install the pypp include file', 0))
+ temp_env = Environment(options = opts)
+ tobuild = temp_env['PROJECTS']
++install_pypp_txt = temp_env['install_pypp_txt']
+ del temp_env    
+ 
+    
+@@ -218,3 +220,8 @@
+                                     cls.ModuleName, cls.PydName), 
+                                      package[index] )
+ 
++        # optionally also install the *.pypp.txt (pyplusplus include-like file)
++        if install_pypp_txt:
++            _env.Install(os.path.join(environment.package_dir_name, cls.parent, cls.ModuleName),
++                         os.path.join(cls.generated_dir, 'exposed_decl.pypp.txt'))
++
