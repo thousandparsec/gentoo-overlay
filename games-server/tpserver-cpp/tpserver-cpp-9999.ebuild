@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86 ~sparc"
 IUSE="avahi gnutls mysql +tpadmin"
 
 DEPEND="dev-libs/boost
-        || ( >=dev-scheme/guile-1.6 dev-scheme/drscheme )
+        || ( >=dev-scheme/guile-1.6 dev-scheme/plt-scheme )
 		avahi? ( >=net-dns/avahi-0.6.0 )
 		gnutls? ( >=net-libs/gnutls-1.2.10 )
 		mysql? ( >=dev-db/mysql-4.0 )"
