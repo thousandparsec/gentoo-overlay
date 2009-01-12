@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tpserver-cpp-0.6.0 (12 Jan 2008)
+
+  12 Jan 2008; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.6.0.ebuild:
+  New version
+
   04 Dec 2008; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.5.1.ebuild:
   Changed dev-scheme/drscheme to dev-scheme/plt-scheme in depends
 
