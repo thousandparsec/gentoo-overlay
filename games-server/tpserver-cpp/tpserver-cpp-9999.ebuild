@@ -25,6 +25,10 @@ DEPEND="dev-libs/boost
 RDEPEND="${DEPEND}
 		 tpadmin? ( games-server/tpadmin-cpp )"
 
+src_unpack() {
+	git_src_unpack
+}
+
 src_compile() {
 	egamesconf \
 		$(use_enable avahi) \

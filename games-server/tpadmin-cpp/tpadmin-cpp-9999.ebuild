@@ -22,6 +22,10 @@ DEPEND=">=dev-libs/libtprl-0.1.2
 		dev-libs/boost"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	git_src_unpack
+}
+
 src_compile() {
 	egamesconf || die "egamesconf failed"
 	emake || die "emake failed"

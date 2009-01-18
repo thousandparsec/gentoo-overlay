@@ -22,6 +22,10 @@ DEPEND="dev-libs/boost
 		gnutls? ( >=net-libs/gnutls-1.2.10 )"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	git_src_unpack
+}
+
 src_compile() {
 	econf \
 		$(use_enable gnutls) \
