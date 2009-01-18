@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-cpp-0.1.0.ebuild:
+  Added sparc keyword
+
   30 Sep 2008; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-cpp-9999.ebuild:
   Added development version from git
 
