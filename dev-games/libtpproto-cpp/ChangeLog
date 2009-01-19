@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  19 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-cpp-0.1.0.ebuild:
+  Skip test phase (requires running tpserver-cpp)
+
   18 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> libtpproto-cpp-0.1.0.ebuild:
   Added sparc keyword
 

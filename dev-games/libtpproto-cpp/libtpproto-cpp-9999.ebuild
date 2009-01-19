@@ -37,6 +37,11 @@ src_compile() {
 	fi
 }
 
+src_test() {
+	# skip test as it requires running tpserver-cpp
+	true
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README
