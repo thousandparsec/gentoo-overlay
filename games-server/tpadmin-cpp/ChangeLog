@@ -2,9 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-*tpadmin-cpp-0.1.0 (12 Jan 2008)
+*tpadmin-cpp-0.1.0 (12 Jan 2009)
 
-  12 Jan 2008; Aaron Mavrinac <mavrinac@gmail.com> tpadmin-cpp-0.1.0.ebuild:
+  12 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> tpadmin-cpp-0.1.0.ebuild:
   New version
 
   30 Sep 2008; Aaron Mavrinac <mavrinac@gmail.com> tpadmin-cpp-9999.ebuild: 
