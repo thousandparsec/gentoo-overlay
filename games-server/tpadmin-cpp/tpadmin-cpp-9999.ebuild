@@ -18,7 +18,7 @@ KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE=""
 
 DEPEND=">=dev-libs/libtprl-0.1.2
-        >=dev-games/libtpproto-cpp-0.2.0
+        >=dev-games/libtpproto-cpp-0.1.9
 		dev-libs/boost"
 RDEPEND="${DEPEND}"
 

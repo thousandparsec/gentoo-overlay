@@ -2,6 +2,9 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  22 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> tpadmin-cpp-0.1.0.ebuild:
+  Depend on >=dev-games/libtpproto-cpp-0.1.9
+
 *tpadmin-cpp-0.1.0 (12 Jan 2009)
 
   12 Jan 2009; Aaron Mavrinac <mavrinac@gmail.com> tpadmin-cpp-0.1.0.ebuild:
