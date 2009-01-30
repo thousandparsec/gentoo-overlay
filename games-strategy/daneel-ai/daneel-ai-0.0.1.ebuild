@@ -43,6 +43,9 @@ src_install() {
 	> ${WORKDIR}/daneel-ai
 	dogamesbin ${WORKDIR}/daneel-ai
 
+	insinto "${GAMES_DATADIR}"/tp/aiclients
+	doins ${FILESDIR}/daneel-ai.xml
+
 	dodoc AUTHORS README TODO
 	prepgamesdirs
 }
