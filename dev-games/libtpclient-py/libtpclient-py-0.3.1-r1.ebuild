@@ -15,7 +15,8 @@ IUSE=""
 
 RDEPEND=">=dev-lang/python-2.3
 		 >=dev-games/libtpproto-py-0.2.4"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	    dev-python/setuptools"
 
 src_install() {
 	distutils_src_install

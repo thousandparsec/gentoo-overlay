@@ -15,7 +15,8 @@ IUSE="doc ssl"
 
 RDEPEND=">=dev-lang/python-2.3
 		 ssl? ( dev-python/pyopenssl )"
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	    dev-python/setuptools"
 
 src_install() {
 	distutils_src_install
