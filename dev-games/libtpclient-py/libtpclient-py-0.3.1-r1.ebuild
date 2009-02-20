@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.3
-
 inherit distutils eutils
 
 DESCRIPTION="A Python library for development of Thousand Parsec game clients"
@@ -15,10 +13,11 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-RDEPEND=">=dev-games/libtpproto-py-0.2.4"
-DEPEND="${RDEPEND}
-	dev-python/setuptools"
+RDEPEND=">=dev-lang/python-2.3
+		 >=dev-games/libtpproto-py-0.2.4"
+DEPEND="${RDEPEND}"
 
 src_install() {
 	distutils_src_install
+	rm -f "${D}"/usr/$(get_libdir)/python${PYVER}/site-packages/*.pth
 }

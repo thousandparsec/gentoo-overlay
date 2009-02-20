@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.3
-
 inherit distutils eutils
 
 DESCRIPTION="A Python protocol library for Thousand Parsec game clients/servers"
@@ -15,10 +13,13 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="doc ssl"
 
-RDEPEND="ssl? ( dev-python/pyopenssl )"
-DEPEND="${RDEPEND}
-       dev-python/setuptools"
+RDEPEND=">=dev-lang/python-2.3
+		 ssl? ( dev-python/pyopenssl )"
+DEPEND="${RDEPEND}"
 
 src_install() {
 	distutils_src_install
+	rm -f "${D}"/usr/$(get_libdir)/python${PYVER}/site-packages/*.pth
+	# evil fix
+	touch "${D}"/usr/$(get_libdir)/python${PYVER}/site-packages/tp/__init__.py
 }
