@@ -39,12 +39,12 @@ src_install() {
 	insinto "$(games_get_libdir)"/${PN}/rules
 	doins rules/* || die "doins rules failed"
 
+	insinto "${GAMES_DATADIR}"/tp/aiclients
+	doins daneel-ai.xml
+
 	sed s%..CODEPATH..%"$(games_get_libdir)"/${PN}%g ${FILESDIR}/daneel-ai \
 	> ${WORKDIR}/daneel-ai
 	dogamesbin ${WORKDIR}/daneel-ai
-
-	insinto "${GAMES_DATADIR}"/tp/aiclients
-	doins ${FILESDIR}/daneel-ai.xml
 
 	dodoc AUTHORS README TODO
 	prepgamesdirs
