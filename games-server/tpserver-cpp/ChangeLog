@@ -2,6 +2,11 @@
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*tpserver-cpp-0.6.2 (31 Mar 2009)
+
+  31 Mar 2009; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.6.2.ebuild:
+  New version
+
 *tpserver-cpp-0.6.1 (25 Mar 2009)
 
   25 Mar 2009; Aaron Mavrinac <mavrinac@gmail.com> tpserver-cpp-0.6.1.ebuild:
