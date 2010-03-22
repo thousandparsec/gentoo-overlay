@@ -1,0 +1,8 @@
+--- libtprl/Makefile.am
++++ libtprl/Makefile.am
+@@ -1,4 +1,4 @@
+-SUBDIRS = tprl test
++SUBDIRS = tprl
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libtprl.pc 
