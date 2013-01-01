@@ -1,6 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+
+EAPI=1
 
 EGIT_REPO_URI="git://git.thousandparsec.net/git/tpserver-cpp.git"
 EGIT_BRANCH="master"
@@ -21,7 +23,7 @@ DEPEND="dev-libs/boost
         || ( >=dev-scheme/guile-1.6 dev-scheme/plt-scheme )
 		avahi? ( >=net-dns/avahi-0.6.0 )
 		gnutls? ( >=net-libs/gnutls-1.2.10 )
-		mysql? ( >=dev-db/mysql-4.0 )"
+		mysql? ( >=virtual/mysql-4.0 )"
 RDEPEND="${DEPEND}
 		 tpadmin? ( games-server/tpadmin-cpp )"
 
