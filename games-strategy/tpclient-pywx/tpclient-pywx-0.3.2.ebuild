@@ -2,9 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-NEED_PYTHON=2.5
+EAPI=5
 
-inherit distutils eutils python games
+PYTHON_COMPAT=( python2_7 )
+DISTUTILS_SINGLE_IMPL=yeah
+
+inherit distutils-r1 eutils
 
 DESCRIPTION="A Python client for Thousand Parsec 4X strategy games"
 HOMEPAGE="http://www.thousandparsec.net/tp/"
@@ -15,57 +18,16 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE="gnome +pygame +imaging"
 
-DEPEND="virtual/python
+DEPEND="
 	dev-python/setuptools"
-RDEPEND="virtual/python
+RDEPEND="
 	>=dev-games/libtpclient-py-0.3.2
 	>=dev-python/wxpython-2.8.0
 	dev-python/numpy
 	pygame? ( dev-python/pygame )
-	imaging? ( dev-python/imaging )
+	imaging? ( dev-python/pillow )
 	gnome? ( dev-python/gnome-python )"
 
-pkg_setup() {
-	games_pkg_setup
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	rm setup.py
-}
-
 src_install() {
-	exeinto "$(games_get_libdir)"/${PN}
-	doexe tpclient-pywx || die "doexe src failed"
-	insinto "$(games_get_libdir)"/${PN}
-	doins *.py || die "doins src failed"
-	insinto "$(games_get_libdir)"/${PN}/extra
-	doins -r extra/* || die "doins src failed"
-	insinto "$(games_get_libdir)"/${PN}/windows
-	doins -r windows/* || die "doins src failed"
-
-	insinto "${GAMES_DATADIR}"/${PN}/graphics
-	doins graphics/* || die "doins graphics failed"
-	insinto "${GAMES_DATADIR}"/${PN}/doc
-	doins doc/tips.txt || die "doins doc failed"
-
-	mv doc/tp-pywx-installed doc/tp-pywx-installed-t
-	sed s%..CODEPATH..%"$(games_get_libdir)"/${PN}%g doc/tp-pywx-installed-t | \
-	sed s%..GRAPHICSPATH..%"${GAMES_DATADIR}"/${PN}/graphics%g | \
-	sed s%..DOCPATH..%"${GAMES_DATADIR}"/${PN}/doc%g > doc/tp-pywx-installed
-	dogamesbin doc/tp-pywx-installed
-
-	dodoc AUTHORS README TODO
-	doicon graphics/tp-icon-32x32.png
-	prepgamesdirs
-}
-
-pkg_postinst() {
-	games_pkg_postinst
-	python_mod_optimize "${ROOT}$(games_get_libdir)"/${PN}
-}
-
-pkg_postrm() {
-	python_mod_cleanup "${ROOT}$(games_get_libdir)"/${PN}
+	distutils-r1_python_install --prefix="$D/usr"
 }
